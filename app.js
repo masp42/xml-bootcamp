@@ -3,7 +3,7 @@ var http = require('http'), //This module provides the HTTP server functionaliti
     express = require('express'), //This module allows this app to respond to HTTP Requests, defines the routing and renders back the required content
     fs = require('fs'), //This module allows to work witht the file system: read and write files back
     xmlParse = require('xslt-processor').xmlParse, //This module allows us to work with XML files
-    xsltProcess = require('xslt-processor').xsltProcess, //The same module allows us to utilise XSL Transformations
+    xsltProcess = require('xslt-processor').xsltProcess; //The same module allows us to utilise XSL Transformations
 
 var router = express(); //We set our routing to be handled by Express
 var server = http.createServer(router); //This is where our server gets created
@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
 
 });
 
-server.listed(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function () {
+server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function () {
 
     var addr = server.address();
     console.log("Server listening at", addr.address + ":" + addr.port); 
